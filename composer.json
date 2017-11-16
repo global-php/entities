@@ -1,0 +1,26 @@
+{
+    "name": "global-php/entities",
+    "description": "Global PHP Entity classes",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Jochem Klaver",
+            "email": "global-php@7ochem.nl"
+        }
+    ],
+    "require": {
+        "php": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "GlobalPhp\\Entities\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
