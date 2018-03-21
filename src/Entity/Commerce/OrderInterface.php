@@ -9,6 +9,11 @@ use GlobalPhp\Entities\Entity\OrganizationInterface;
 use GlobalPhp\Entities\ValueObject\Date;
 use GlobalPhp\Entities\ValueObject\MonetaryValue;
 
+/**
+ * Order Entity interface
+ *
+ * @author Jochem Klaver <global-php@7ochem.nl>
+ */
 interface OrderInterface extends EntityInterface
 {
 
@@ -20,7 +25,7 @@ interface OrderInterface extends EntityInterface
     /**
      * @param string $number
      */
-    public function setNumber(string $number);
+    public function setNumber($number);
 
     /**
      * @return Date

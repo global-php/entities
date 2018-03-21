@@ -8,6 +8,11 @@ use GlobalPhp\Entities\Entity\EntityInterface;
 use GlobalPhp\Entities\ValueObject\EmailAddress;
 use GlobalPhp\Entities\ValueObject\PhoneNumber;
 
+/**
+ * Customer Entity interface
+ *
+ * @author Jochem Klaver <global-php@7ochem.nl>
+ */
 interface CustomerInterface extends EntityInterface
 {
 
