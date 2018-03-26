@@ -17,12 +17,22 @@ interface OrderItemInterface extends EntityInterface
     /**
      * @return string
      */
+    public function getName();
+
+    /**
+     * @param string $name
+     */
+    public function setName($name);
+
+    /**
+     * @return string
+     */
     public function getSku();
 
     /**
      * @param string $sku
      */
-    public function setSku(string $sku);
+    public function setSku($sku);
 
     /**
      * @return float
@@ -32,7 +42,7 @@ interface OrderItemInterface extends EntityInterface
     /**
      * @param float $quantity
      */
-    public function setQuantity(float $quantity);
+    public function setQuantity($quantity);
 
     /**
      * @return MonetaryValue
@@ -57,17 +67,17 @@ interface OrderItemInterface extends EntityInterface
     /**
      * @return OrderItemInterface[]
      */
-    public function getChildItems();
+    public function getChildren();
 
     /**
-     * @param OrderItemInterface[] $childItems
+     * @param OrderItemInterface[] $children
      */
-    public function setChildItems(array $childItems);
+    public function setChildren(array $children);
 
     /**
-     * @param OrderItemInterface $childItem
+     * @param OrderItemInterface $child
      */
-    public function addChildItem(OrderItemInterface $childItem);
+    public function addChild(OrderItemInterface $child);
 
     /**
      * @return OrderInterface

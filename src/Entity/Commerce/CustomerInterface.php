@@ -24,7 +24,7 @@ interface CustomerInterface extends EntityInterface
     /**
      * @param string $name
      */
-    public function setName(string $name);
+    public function setName($name);
 
     /**
      * @return AddressInterface[]

@@ -21,7 +21,7 @@ trait NamedTrait
     /**
      * @param string $name
      */
-    public function setName(string $name)
+    public function setName($name)
     {
         $this->name = $name;
     }

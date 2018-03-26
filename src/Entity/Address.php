@@ -2,13 +2,15 @@
 
 namespace GlobalPhp\Entities\Entity;
 
+use GlobalPhp\Entities\Entity\EntityTrait\NamedTrait;
+
 use GlobalPhp\Entities\ValueObject\Country;
 use GlobalPhp\Entities\ValueObject\GeoLocation;
 use GlobalPhp\Entities\ValueObject\PhoneNumber;
 
 class Address implements AddressInterface
 {
-    use EntityTrait;
+    use EntityTrait, NamedTrait;
 
     /**
      * @var string
@@ -39,6 +41,11 @@ class Address implements AddressInterface
      * @var string
      */
     private $houseNumberAddition;
+
+    /**
+     * @var string[]
+     */
+    private $addressLines;
 
     /**
      * @var string
@@ -100,7 +107,7 @@ class Address implements AddressInterface
         return $this->unit;
     }
 
-    public function setUnit(string $unit)
+    public function setUnit($unit)
     {
         $this->unit = $unit;
     }
@@ -110,7 +117,7 @@ class Address implements AddressInterface
         return $this->floor;
     }
 
-    public function setFloor(int $floor)
+    public function setFloor($floor)
     {
         $this->floor = $floor;
     }
@@ -120,7 +127,7 @@ class Address implements AddressInterface
         return $this->building;
     }
 
-    public function setBuilding(string $building)
+    public function setBuilding($building)
     {
         $this->building = $building;
     }
@@ -130,7 +137,7 @@ class Address implements AddressInterface
         return $this->street;
     }
 
-    public function setStreet(string $street)
+    public function setStreet($street)
     {
         $this->street = $street;
     }
@@ -140,7 +147,7 @@ class Address implements AddressInterface
         return $this->houseNumber;
     }
 
-    public function setHouseNumber(int $houseNumber)
+    public function setHouseNumber($houseNumber)
     {
         $this->houseNumber = $houseNumber;
     }
@@ -150,9 +157,24 @@ class Address implements AddressInterface
         return $this->houseNumberAddition;
     }
 
-    public function setHouseNumberAddition(string $houseNumberAddition)
+    public function setHouseNumberAddition($houseNumberAddition)
     {
         $this->houseNumberAddition = $houseNumberAddition;
+    }
+
+    public function getAddressLines()
+    {
+        return $this->addressLines;
+    }
+
+    public function setAddressLines(array $addressLines)
+    {
+        $this->addressLines = $addressLines;
+    }
+
+    public function addAddressLine($addressLine)
+    {
+        $this->addressLines[] = $addressLine;
     }
 
     public function getDistrict()
@@ -160,7 +182,7 @@ class Address implements AddressInterface
         return $this->district;
     }
 
-    public function setDistrict(string $district)
+    public function setDistrict($district)
     {
         $this->district = $district;
     }
@@ -170,7 +192,7 @@ class Address implements AddressInterface
         return $this->postalCode;
     }
 
-    public function setPostalCode(string $postalCode)
+    public function setPostalCode($postalCode)
     {
         $this->postalCode = $postalCode;
     }
@@ -180,7 +202,7 @@ class Address implements AddressInterface
         return $this->city;
     }
 
-    public function setCity(string $city)
+    public function setCity($city)
     {
         $this->city = $city;
     }
@@ -190,7 +212,7 @@ class Address implements AddressInterface
         return $this->region;
     }
 
-    public function setRegion(string $region)
+    public function setRegion($region)
     {
         $this->region = $region;
     }
@@ -200,7 +222,7 @@ class Address implements AddressInterface
         return $this->province;
     }
 
-    public function setProvince(string $province)
+    public function setProvince($province)
     {
         $this->province = $province;
     }
@@ -210,7 +232,7 @@ class Address implements AddressInterface
         return $this->state;
     }
 
-    public function setState(string $state)
+    public function setState($state)
     {
         $this->state = $state;
     }
@@ -230,7 +252,7 @@ class Address implements AddressInterface
         return $this->continent;
     }
 
-    public function setContinent(string $continent)
+    public function setContinent($continent)
     {
         $this->continent = $continent;
     }

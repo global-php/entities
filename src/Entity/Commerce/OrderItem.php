@@ -2,9 +2,6 @@
 
 namespace GlobalPhp\Entities\Entity\Commerce;
 
-use GlobalPhp\Entities\Entity\Commerce\OrderInterface;
-use GlobalPhp\Entities\Entity\Commerce\ProductInterface;
-
 use GlobalPhp\Entities\Entity\EntityTrait;
 use GlobalPhp\Entities\Entity\EntityTrait\NamedTrait;
 
@@ -42,7 +39,7 @@ class OrderItem implements OrderItemInterface
     /**
      * @var OrderItemInterface[]
      */
-    private $childItems;
+    private $children;
 
     /**
      * @var OrderInterface
@@ -54,12 +51,22 @@ class OrderItem implements OrderItemInterface
      */
     private $product;
 
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
     public function getSku()
     {
         return $this->sku;
     }
 
-    public function setSku(string $sku)
+    public function setSku($sku)
     {
         $this->sku = $sku;
     }
@@ -69,7 +76,7 @@ class OrderItem implements OrderItemInterface
         return $this->quantity;
     }
 
-    public function setQuantity(float $quantity)
+    public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
     }
@@ -94,19 +101,19 @@ class OrderItem implements OrderItemInterface
         $this->totalAmount = $totalAmount;
     }
 
-    public function getChildItems()
+    public function getChildren()
     {
-        return $this->childItems;
+        return $this->children;
     }
 
-    public function setChildItems(array $childItems)
+    public function setChildren(array $children)
     {
-        $this->childItems = $childItems;
+        $this->children = $children;
     }
 
-    public function addChildItem(OrderItemInterface $childItem)
+    public function addChild(OrderItemInterface $child)
     {
-        $this->childItems[] = $childItem;
+        $this->children[] = $child;
     }
 
     public function getOrder()

@@ -12,12 +12,22 @@ interface AddressInterface extends EntityInterface
     /**
      * @return string
      */
+    public function getName();
+
+    /**
+     * @param string $unit
+     */
+    public function setName($name);
+
+    /**
+     * @return string
+     */
     public function getUnit();
 
     /**
      * @param string $unit
      */
-    public function setUnit(string $unit);
+    public function setUnit($unit);
 
     /**
      * @return int
@@ -27,7 +37,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param int $floor
      */
-    public function setFloor(int $floor);
+    public function setFloor($floor);
 
     /**
      * @return string
@@ -37,7 +47,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $building
      */
-    public function setBuilding(string $building);
+    public function setBuilding($building);
 
     /**
      * @return string
@@ -47,7 +57,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $street
      */
-    public function setStreet(string $street);
+    public function setStreet($street);
 
     /**
      * @return int
@@ -57,7 +67,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param int $houseNumber
      */
-    public function setHouseNumber(int $houseNumber);
+    public function setHouseNumber($houseNumber);
 
     /**
      * @return string
@@ -67,7 +77,22 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $houseNumberAddition
      */
-    public function setHouseNumberAddition(string $houseNumberAddition);
+    public function setHouseNumberAddition($houseNumberAddition);
+
+    /**
+     * @return string[]
+     */
+    public function getAddressLines();
+
+    /**
+     * @param string[] $addressLines
+     */
+    public function setAddressLines(array $addressLines);
+
+    /**
+     * @param string $addressLine
+     */
+    public function addAddressLine($addressLine);
 
     /**
      * @return string
@@ -77,7 +102,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $district
      */
-    public function setDistrict(string $district);
+    public function setDistrict($district);
 
     /**
      * @return string
@@ -87,7 +112,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $postalCode
      */
-    public function setPostalCode(string $postalCode);
+    public function setPostalCode($postalCode);
 
     /**
      * @return string
@@ -97,7 +122,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $city
      */
-    public function setCity(string $city);
+    public function setCity($city);
 
     /**
      * @return string
@@ -107,7 +132,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $region
      */
-    public function setRegion(string $region);
+    public function setRegion($region);
 
     /**
      * @return string
@@ -117,7 +142,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $province
      */
-    public function setProvince(string $province);
+    public function setProvince($province);
 
     /**
      * @return string
@@ -127,7 +152,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $state
      */
-    public function setState(string $state);
+    public function setState($state);
 
     /**
      * @return Country
@@ -147,7 +172,7 @@ interface AddressInterface extends EntityInterface
     /**
      * @param string $continent
      */
-    public function setContinent(string $continent);
+    public function setContinent($continent);
 
     /**
      * @return PhoneNumber
