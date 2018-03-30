@@ -2,7 +2,7 @@
 
 namespace GlobalPhp\Entities\Flag;
 
-class Deleted implements DeletedInterface
+class DeletedFlag implements DeletedFlagInterface
 {
     use FlagTrait;
 
@@ -11,7 +11,7 @@ class Deleted implements DeletedInterface
      */
     public function isDeleted()
     {
-        return $this->value === DeletedInterface::IS_DELETED;
+        return $this->value === DeletedFlagInterface::IS_DELETED;
     }
 
     /**
@@ -19,7 +19,7 @@ class Deleted implements DeletedInterface
      */
     public function isNotDeleted()
     {
-        return $this->value === DeletedInterface::IS_NOT_DELETED;
+        return $this->value === DeletedFlagInterface::IS_NOT_DELETED;
     }
 
 }

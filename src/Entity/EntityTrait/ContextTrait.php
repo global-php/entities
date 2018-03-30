@@ -8,16 +8,36 @@ trait ContextTrait
 {
 
     /**
+     * Array of "contexts" of the entity
      * @var ContextInterface[]
      */
-    private $entityContext = [];
+    private $entityContexts = [];
 
     /**
      * @return ContextInterface[]
      */
     public function getEntityContexts()
     {
-        return $this->entityContext;
+        return $this->entityContexts;
+    }
+
+    /**
+     * @param string $contextType
+     * @return ContextInterface
+     * @todo Returns only the first occurrence of the context type
+     */
+    public function getEntityContextByType($contextType)
+    {
+        foreach ($this->entityContexts as $context) {
+            if (get_class($context) === $contextType) {
+                return $context;
+            }
+        }
+
+        $context = new $contextType();
+        $this->entityContexts[] = $context;
+
+        return $context;
     }
 
     /**
@@ -25,7 +45,7 @@ trait ContextTrait
      */
     public function setEntityContexts(array $entityContexts)
     {
-        $this->entityContext = $entityContexts;
+        $this->entityContexts = $entityContexts;
     }
 
     /**
@@ -33,7 +53,7 @@ trait ContextTrait
      */
     public function addEntityContext(ContextInterface $entityContext)
     {
-        $this->entityContext[] = $entityContext;
+        $this->entityContexts[] = $entityContext;
     }
 
 }

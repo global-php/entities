@@ -18,7 +18,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $name
      */
-    public function setName(string $name);
+    public function setName($name);
 
     /**
      * @return string
@@ -28,7 +28,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $industry
      */
-    public function setIndustry(string $industry);
+    public function setIndustry($industry);
 
     /**
      * @return string
@@ -38,7 +38,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $employeesRange
      */
-    public function setEmployeesRange(string $employeesRange);
+    public function setEmployeesRange($employeesRange);
 
     /**
      * @return string
@@ -48,7 +48,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $chamberOfCommerce
      */
-    public function setChamberOfCommerce(string $chamberOfCommerce);
+    public function setChamberOfCommerce($chamberOfCommerce);
 
     /**
      * @return string
@@ -58,7 +58,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $cocRegistrationNumber
      */
-    public function setCocRegistrationNumber(string $cocRegistrationNumber);
+    public function setCocRegistrationNumber($cocRegistrationNumber);
 
     /**
      * @return string
@@ -68,7 +68,7 @@ interface OrganizationInterface extends EntityInterface
     /**
      * @param string $vatNumber
      */
-    public function setVatNumber(string $vatNumber);
+    public function setVatNumber($vatNumber);
 
     /**
      * @return AddressInterface[]

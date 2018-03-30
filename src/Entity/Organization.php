@@ -61,7 +61,7 @@ class Organization implements OrganizationInterface
         return $this->industry;
     }
 
-    public function setIndustry(string $industry)
+    public function setIndustry($industry)
     {
         $this->industry = $industry;
     }
@@ -71,7 +71,7 @@ class Organization implements OrganizationInterface
         return $this->employeesRange;
     }
 
-    public function setEmployeesRange(string $employeesRange)
+    public function setEmployeesRange($employeesRange)
     {
         $this->employeesRange = $employeesRange;
     }
@@ -81,7 +81,7 @@ class Organization implements OrganizationInterface
         return $this->chamberOfCommerce;
     }
 
-    public function setChamberOfCommerce(string $chamberOfCommerce)
+    public function setChamberOfCommerce($chamberOfCommerce)
     {
         $this->chamberOfCommerce = $chamberOfCommerce;
     }
@@ -91,7 +91,7 @@ class Organization implements OrganizationInterface
         return $this->cocRegistrationNumber;
     }
 
-    public function setCocRegistrationNumber(string $cocRegistrationNumber)
+    public function setCocRegistrationNumber($cocRegistrationNumber)
     {
         $this->cocRegistrationNumber = $cocRegistrationNumber;
     }
@@ -101,7 +101,7 @@ class Organization implements OrganizationInterface
         return $this->vatNumber;
     }
 
-    public function setVatNumber(string $vatNumber)
+    public function setVatNumber($vatNumber)
     {
         $this->vatNumber = $vatNumber;
     }

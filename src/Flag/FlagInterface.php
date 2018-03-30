@@ -6,6 +6,11 @@ interface FlagInterface
 {
 
     /**
+     * @param int $value
+     */
+    public function __construct($value);
+
+    /**
      * @return int
      */
     public function getValue();
@@ -13,6 +18,6 @@ interface FlagInterface
     /**
      * @param int $value
      */
-    public function setValue(int $value);
+    public function setValue($value);
 
 }

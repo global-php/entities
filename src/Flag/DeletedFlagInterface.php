@@ -2,25 +2,25 @@
 
 namespace GlobalPhp\Entities\Flag;
 
-interface ActiveInterface extends FlagInterface
+interface DeletedFlagInterface extends FlagInterface
 {
 
     /**#@+
      * Flag constants
      * @var integer
      */
-    const IS_NOT_ACTIVE = 0;
-    const IS_ACTIVE = 1;
+    const IS_NOT_DELETED = 0;
+    const IS_DELETED = 1;
     /**#@-*/
 
     /**
      * @return bool
      */
-    public function isActive();
+    public function isDeleted();
 
     /**
      * @return bool
      */
-    public function isNotActive();
+    public function isNotDeleted();
 
 }

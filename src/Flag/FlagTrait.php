@@ -11,6 +11,14 @@ trait FlagTrait
     private $value;
 
     /**
+     * @param int $value
+     */
+    public function __construct($value)
+    {
+        $this->value = $value;
+    }
+
+    /**
      * @return int
      */
     public function getValue()
@@ -21,7 +29,7 @@ trait FlagTrait
     /**
      * @param int $value
      */
-    public function setValue(int $value)
+    public function setValue($value)
     {
         $this->value = $value;
     }

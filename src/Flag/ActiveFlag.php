@@ -2,7 +2,7 @@
 
 namespace GlobalPhp\Entities\Flag;
 
-class Active implements ActiveInterface
+class ActiveFlag implements ActiveFlagInterface
 {
     use FlagTrait;
 
@@ -11,7 +11,7 @@ class Active implements ActiveInterface
      */
     public function isActive()
     {
-        return $this->value === ActiveInterface::IS_ACTIVE;
+        return $this->value === ActiveFlagInterface::IS_ACTIVE;
     }
 
     /**
@@ -19,7 +19,7 @@ class Active implements ActiveInterface
      */
     public function isNotActive()
     {
-        return $this->value === ActiveInterface::IS_NOT_ACTIVE;
+        return $this->value === ActiveFlagInterface::IS_NOT_ACTIVE;
     }
 
 }

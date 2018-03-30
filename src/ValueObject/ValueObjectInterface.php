@@ -6,6 +6,11 @@ interface ValueObjectInterface
 {
 
     /**
+     * @param mixed $value
+     */
+    public function __construct($value);
+
+    /**
      * @return mixed
      */
     public function getValue();
