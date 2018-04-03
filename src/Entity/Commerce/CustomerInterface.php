@@ -7,6 +7,7 @@ use GlobalPhp\Entities\Entity\EntityInterface;
 
 use GlobalPhp\Entities\ValueObject\EmailAddress;
 use GlobalPhp\Entities\ValueObject\PhoneNumber;
+use GlobalPhp\Entities\ValueObject\Url;
 
 /**
  * Customer Entity interface
@@ -60,5 +61,15 @@ interface CustomerInterface extends EntityInterface
      * @param EmailAddress $emailAddress
      */
     public function setEmailAddress(EmailAddress $emailAddress);
+
+    /**
+     * @return Url
+     */
+    public function getPhotoUrl();
+
+    /**
+     * @param Url $photoUrl
+     */
+    public function setPhotoUrl(Url $photoUrl);
 
 }

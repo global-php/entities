@@ -2,52 +2,31 @@
 
 namespace GlobalPhp\Entities\Entity;
 
-use GlobalPhp\Entities\Context\ContextInterface;
-use GlobalPhp\Entities\Flag\FlagInterface;
+use GlobalPhp\Entities\Context\ContextArray;
+
+use GlobalPhp\Entities\Flag\FlagArray;
 
 interface EntityInterface
 {
 
     /**
-     * @return ContextInterface[]
+     * @return ContextArray
      */
     public function getEntityContexts();
 
     /**
-     * @param string $contextType
-     * @return ContextInterface
+     * @param ContextArray $entityContexts
      */
-    public function getEntityContextByType($contextType);
+    public function setEntityContexts(ContextArray $entityContexts);
 
     /**
-     * @param ContextInterface[] $entityContexts
-     */
-    public function setEntityContexts(array $entityContexts);
-
-    /**
-     * @param ContextInterface $entityContext
-     */
-    public function addEntityContext(ContextInterface $entityContext);
-
-    /**
-     * @return FlagInterface[]
+     * @return FlagArray
      */
     public function getEntityFlags();
 
     /**
-     * @param string $flagType
-     * @return FlagInterface
+     * @param FlagArray $flags
      */
-    public function getEntityFlagByType($flagType);
-
-    /**
-     * @param FlagInterface[] $flags
-     */
-    public function setEntityFlags(array $flags);
-
-    /**
-     * @param FlagInterface $flag
-     */
-    public function addEntityFlag(FlagInterface $flag);
+    public function setEntityFlags(FlagArray $flags);
 
 }

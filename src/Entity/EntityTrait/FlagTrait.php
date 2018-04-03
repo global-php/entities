@@ -2,67 +2,34 @@
 
 namespace GlobalPhp\Entities\Entity\EntityTrait;
 
-use GlobalPhp\Entities\Flag\FlagInterface;
+use GlobalPhp\Entities\Flag\FlagArray;
 
 trait FlagTrait
 {
 
     /**
      * Unique array of "flags" of the entity
-     * @var FlagInterface[]
+     * @var FlagArray
      */
-    private $flags = [];
+    private $flagArray;
 
     /**
-     * @return FlagInterface[]
+     * @return FlagArray
      */
     public function getEntityFlags()
     {
-        return $this->flags;
+        if (!$this->flagArray) {
+            $this->flagArray = new FlagArray();
+        }
+        return $this->flagArray;
     }
 
     /**
-     * @param string $flagType
-     * @return FlagInterface
+     * @param FlagArray $flags
      */
-    public function getEntityFlagByType($flagType)
+    public function setEntityFlags(FlagArray $flags)
     {
-        foreach ($this->flags as $flag) {
-            if (get_class($flag) === $flagType) {
-                return $flag;
-            }
-        }
-
-        $flag = new $flagType();
-        $this->flags[] = $flag;
-
-        return $flag;
-    }
-
-    /**
-     * @param FlagInterface[] $flags
-     */
-    public function setEntityFlags(array $flags)
-    {
-        $this->flags = $flags;
-    }
-
-    /**
-     * @param FlagInterface $flag
-     */
-    public function addEntityFlag(FlagInterface $flag)
-    {
-        $exists = false;
-        foreach ($this->flags as $key => $existingFlag) {
-            if (get_class($existingFlag) === get_class($flag)) {
-                $this->flags[$key] = $flag;
-                $exists = true;
-            }
-        }
-
-        if (!$exists) {
-            $this->flags[] = $flag;
-        }
+        $this->flagArray = $flags;
     }
 
 }
