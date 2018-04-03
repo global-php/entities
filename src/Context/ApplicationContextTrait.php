@@ -26,10 +26,10 @@ trait ApplicationContextTrait
 
     /**
      * @param string $entityName
-     * @param Identifier $entityIdentifier
+     * @param int $entityIdentifier
      * @param Url|null $url
      */
-    public function __construct($entityName, Identifier $entityIdentifier, Url $url = null)
+    public function __construct($entityName, $entityIdentifier, Url $url = null)
     {
         $this->entityName = $entityName;
         $this->entityIdentifier = $entityIdentifier;
@@ -56,7 +56,7 @@ trait ApplicationContextTrait
     }
 
     /**
-     * @return Identifier
+     * @return int
      */
     public function getEntityIdentifier()
     {
@@ -64,10 +64,10 @@ trait ApplicationContextTrait
     }
 
     /**
-     * @param Identifier $entityIdentifier
+     * @param int $entityIdentifier
      * @return static
      */
-    public function withEntityIdentifier(Identifier $entityIdentifier)
+    public function withEntityIdentifier($entityIdentifier)
     {
         $newContextObject = clone $this;
         $newContextObject->entityIdentifier = $entityIdentifier;

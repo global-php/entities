@@ -10,10 +10,10 @@ interface ApplicationContextInterface extends ContextInterface
 
     /**
      * @param string $entityName
-     * @param Identifier $entityIdentifier
+     * @param int $entityIdentifier
      * @param Url|null $url
      */
-    public function __construct($entityName, Identifier $entityIdentifier, Url $url = null);
+    public function __construct($entityName, $entityIdentifier, Url $url = null);
 
     /**
      * @return string
@@ -27,15 +27,15 @@ interface ApplicationContextInterface extends ContextInterface
     public function withEntityName($entityName);
 
     /**
-     * @return Identifier
+     * @return int
      */
     public function getEntityIdentifier();
 
     /**
-     * @param Identifier $entityIdentifier
+     * @param int $entityIdentifier
      * @return static
      */
-    public function withEntityIdentifier(Identifier $entityIdentifier);
+    public function withEntityIdentifier($entityIdentifier);
 
     /**
      * @return Url
