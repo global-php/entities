@@ -10,22 +10,22 @@ interface EntityInterface
 {
 
     /**
-     * @return ContextArray
+     * @return ContextArray<int, \GlobalPhp\Entities\Context\ContextInterface>
      */
     public function getEntityContexts();
 
     /**
-     * @param ContextArray $entityContexts
+     * @param ContextArray<int, \GlobalPhp\Entities\Context\ContextInterface> $entityContexts
      */
     public function setEntityContexts(ContextArray $entityContexts);
 
     /**
-     * @return FlagArray
+     * @return FlagArray<int, \GlobalPhp\Entities\Flag\FlagInterface>
      */
     public function getEntityFlags();
 
     /**
-     * @param FlagArray $flags
+     * @param FlagArray<int, \GlobalPhp\Entities\Flag\FlagInterface> $flags
      */
     public function setEntityFlags(FlagArray $flags);
 
