@@ -2,8 +2,9 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-class MonetaryValue extends ValueObjectAbstract implements ValueObjectInterface
+class MonetaryValue implements ValueObjectInterface
 {
+    use ValueObjectTrait;
 
     /**
      * @var Currency

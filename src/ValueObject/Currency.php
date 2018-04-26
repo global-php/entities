@@ -2,7 +2,12 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-class Currency extends ValueObjectAbstract implements ValueObjectInterface
+class Currency implements ValueObjectInterface
 {
+    use ValueObjectTrait;
+
+    /**
+     * @todo implement alcohol/iso4217 as underlying library {@link https://github.com/alcohol/iso4217}
+     */
 
 }

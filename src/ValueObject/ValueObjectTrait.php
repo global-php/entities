@@ -2,16 +2,16 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-abstract class ValueObjectAbstract
+trait ValueObjectTrait
 {
 
     /**
      * @var mixed
      */
-    protected $value;
+    private $value;
 
     /**
-     * ValueObjectAbstract constructor
+     * ValueObject constructor
      *
      * @param mixed $value
      */
@@ -34,9 +34,7 @@ abstract class ValueObjectAbstract
      */
     public function withValue($value)
     {
-        $newValueObject = clone $this;
-        $newValueObject->value = $value;
-        return $newValueObject;
+        return new static($value);
     }
 
     /**

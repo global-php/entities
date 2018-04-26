@@ -2,7 +2,8 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-class PhoneNumber extends ValueObjectAbstract implements ValueObjectInterface
+class PhoneNumber implements ValueObjectInterface
 {
+    use ValueObjectTrait;
 
 }

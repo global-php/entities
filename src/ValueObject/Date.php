@@ -11,6 +11,11 @@ namespace GlobalPhp\Entities\ValueObject;
  */
 class Date implements ValueObjectInterface
 {
+    use ValueObjectTrait;
+
+    /**
+     * @todo implement timezones
+     */
 
     /**#@+
      * DateTime format constants
@@ -26,9 +31,10 @@ class Date implements ValueObjectInterface
     private $dateTime;
 
     /**
-     * ValueObjectAbstract constructor
+     * Date constructor
      *
      * @param \DateTimeImmutable|\DateTime|\DateTimeInterface|string|int $value
+     * @throws \Exception
      */
     public function __construct($value)
     {
@@ -46,17 +52,17 @@ class Date implements ValueObjectInterface
     /**
      * @param \DateTimeImmutable|\DateTime|\DateTimeInterface|string|int $value
      * @return static
+     * @throws \Exception
      */
     public function withValue($value)
     {
-        $newDateObject = clone $this;
-        $newDateObject->dateTime = static::createDateTimeImmutableFromMixed($value);
-        return $newDateObject;
+        return new static($value);
     }
 
     /**
      * @param \DateTimeImmutable|\DateTime|\DateTimeInterface|string|int $value
      * @return \DateTimeImmutable
+     * @throws \Exception
      */
     private static function createDateTimeImmutableFromMixed($value)
     {
@@ -129,14 +135,6 @@ class Date implements ValueObjectInterface
         $newDateObject = clone $this;
         $newDateObject->dateTime = $newDateObject->dateTime->setTimestamp($timestamp);
         return $newDateObject;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return (string)$this->getValue();
     }
 
 }

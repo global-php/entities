@@ -2,7 +2,8 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-class Identifier extends ValueObjectAbstract implements ValueObjectInterface
+class Identifier implements ValueObjectInterface
 {
+    use ValueObjectTrait;
 
 }

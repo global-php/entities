@@ -2,7 +2,8 @@
 
 namespace GlobalPhp\Entities\ValueObject;
 
-class GeoLocation extends ValueObjectAbstract implements ValueObjectInterface
+class GeoLocation implements ValueObjectInterface
 {
+    use ValueObjectTrait;
 
 }
