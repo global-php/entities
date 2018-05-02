@@ -80,8 +80,7 @@ final class ContextArray extends \IteratorIterator
      */
     private function compareObjectType(ContextInterface $object, $typeClassName)
     {
-        return get_class($object) === ltrim($typeClassName, '\\')
-            || is_subclass_of($object, $typeClassName);
+        return is_a($object, $typeClassName) || is_subclass_of($object, $typeClassName);
     }
 
     /**
