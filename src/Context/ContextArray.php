@@ -9,7 +9,7 @@ namespace GlobalPhp\Entities\Context;
  *
  * @method \ArrayIterator getInnerIterator()
  */
-final class ContextArray extends \IteratorIterator
+final class ContextArray extends \IteratorIterator implements \Countable
 {
 
     /**
@@ -28,6 +28,7 @@ final class ContextArray extends \IteratorIterator
     }
 
     /**
+     * @see \Countable::count()
      * @return int
      */
     public function count()
@@ -69,10 +70,10 @@ final class ContextArray extends \IteratorIterator
      */
     public function hasType($typeClassName)
     {
-        if ($this->count() === 0) {
+        if (count($this) === 0) {
             return false;
         }
-        return 0 < $this->getByType($typeClassName)->count();
+        return 0 < count($this->getByType($typeClassName));
     }
 
     /**
@@ -82,7 +83,7 @@ final class ContextArray extends \IteratorIterator
     public function getByType($typeClassName)
     {
         $contextsByType = new static();
-        if ($this->count() === 0) {
+        if (count($this) === 0) {
             return $contextsByType;
         }
 
@@ -123,10 +124,10 @@ final class ContextArray extends \IteratorIterator
      */
     public function hasRelationType($relationType)
     {
-        if ($this->count() === 0) {
+        if (count($this) === 0) {
             return false;
         }
-        return 0 < $this->getByRelationType($relationType)->count();
+        return 0 < count($this->getByRelationType($relationType));
     }
 
     /**
@@ -136,7 +137,7 @@ final class ContextArray extends \IteratorIterator
     public function getByRelationType($relationType)
     {
         $contextsByRelationType = new static();
-        if ($this->count() === 0) {
+        if (count($this) === 0) {
             return $contextsByRelationType;
         }
 
