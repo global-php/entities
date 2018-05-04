@@ -17,7 +17,7 @@ class Identifier implements ValueObjectInterface
      */
     public function __construct($value, Url $url = null)
     {
-        parent::__construct($value);
+        $this->value = $value;
         $this->url = $url;
     }
 

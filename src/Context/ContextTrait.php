@@ -36,6 +36,7 @@ trait ContextTrait
      */
     public function __construct($relationType, $entityName, Identifier $entityIdentifier)
     {
+        $this->relationType = $relationType;
         $this->entityName = $entityName;
         $this->entityIdentifier = $entityIdentifier;
     }
