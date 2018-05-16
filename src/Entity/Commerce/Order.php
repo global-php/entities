@@ -8,6 +8,7 @@ use GlobalPhp\Entities\Entity\OrganizationInterface;
 
 use GlobalPhp\Entities\ValueObject\Date;
 use GlobalPhp\Entities\ValueObject\MonetaryValue;
+use GlobalPhp\Entities\ValueObject\Status;
 
 /**
  * Order Entity implementation
@@ -27,6 +28,11 @@ class Order implements OrderInterface
      * @var Date
      */
     private $date;
+
+    /**
+     * @var Status
+     */
+    private $status;
 
     /**
      * @var MonetaryValue
@@ -86,6 +92,16 @@ class Order implements OrderInterface
     public function setDate(Date $date)
     {
         $this->date = $date;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus(Status $status)
+    {
+        $this->status = $status;
     }
 
     public function getTotalAmount()

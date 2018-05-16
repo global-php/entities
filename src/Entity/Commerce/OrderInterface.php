@@ -8,6 +8,7 @@ use GlobalPhp\Entities\Entity\OrganizationInterface;
 
 use GlobalPhp\Entities\ValueObject\Date;
 use GlobalPhp\Entities\ValueObject\MonetaryValue;
+use GlobalPhp\Entities\ValueObject\Status;
 
 /**
  * Order Entity interface
@@ -36,6 +37,16 @@ interface OrderInterface extends EntityInterface
      * @param Date $date
      */
     public function setDate(Date $date);
+
+    /**
+     * @return Status
+     */
+    public function getStatus();
+
+    /**
+     * @param Status $status
+     */
+    public function setStatus(Status $status);
 
     /**
      * @return MonetaryValue
