@@ -3,8 +3,11 @@
 namespace GlobalPhp\Entities\Entity\Commerce;
 
 use GlobalPhp\Entities\Entity\EntityInterface;
+use GlobalPhp\Entities\Entity\OrganizationInterface;
 
+use GlobalPhp\Entities\ValueObject\Dimensions;
 use GlobalPhp\Entities\ValueObject\MonetaryValue;
+use GlobalPhp\Entities\ValueObject\Weight;
 
 interface ProductInterface extends EntityInterface
 {
@@ -22,6 +25,18 @@ interface ProductInterface extends EntityInterface
     /**
      * @return string
      */
+    public function getDescription();
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description);
+
+    /**
+     * Get Stock Keeping Unit (SKU) code
+     *
+     * @return string
+     */
     public function getSku();
 
     /**
@@ -30,14 +45,16 @@ interface ProductInterface extends EntityInterface
     public function setSku($sku);
 
     /**
-     * @return float
+     * Get Global Trade Item Number (GTIN), for example EAN code
+     *
+     * @return string
      */
-    public function getStockQuantity();
+    public function getGtin();
 
     /**
-     * @param float $quantity
+     * @param string $gtin
      */
-    public function setStockQuantity($quantity);
+    public function setGtin($gtin);
 
     /**
      * @return MonetaryValue
@@ -48,6 +65,36 @@ interface ProductInterface extends EntityInterface
      * @param MonetaryValue $price
      */
     public function setPrice(MonetaryValue $price);
+
+    /**
+     * @return Weight
+     */
+    public function getWeight();
+
+    /**
+     * @param Weight $weight
+     */
+    public function setWeight(Weight $weight);
+
+    /**
+     * @return Dimensions
+     */
+    public function getDimensions();
+
+    /**
+     * @param Dimensions $dimensions
+     */
+    public function setDimensions(Dimensions $dimensions);
+
+    /**
+     * @return OrganizationInterface
+     */
+    public function getBrand();
+
+    /**
+     * @param OrganizationInterface $brand
+     */
+    public function setBrand(OrganizationInterface $brand);
 
     /**
      * @return ProductInterface[]
@@ -63,5 +110,50 @@ interface ProductInterface extends EntityInterface
      * @param ProductInterface $child
      */
     public function addChild(ProductInterface $child);
+
+    /**
+     * @return ProductInterface[]
+     */
+    public function getRelatedProducts();
+
+    /**
+     * @param ProductInterface[] $relatedProducts
+     */
+    public function setRelatedProducts(array $relatedProducts);
+
+    /**
+     * @param ProductInterface $relatedProduct
+     */
+    public function addRelatedProduct(ProductInterface $relatedProduct);
+
+    /**
+     * @return StockInterface[]
+     */
+    public function getStocks();
+
+    /**
+     * @param StockInterface[] $stocks
+     */
+    public function setStocks(array $stocks);
+
+    /**
+     * @param StockInterface $stock
+     */
+    public function addStock(/*StockInterface*/ $stock);
+
+    /**
+     * @return CategoryInterface[]
+     */
+    public function getCategories();
+
+    /**
+     * @param CategoryInterface[] $categories
+     */
+    public function setCategories(array $categories);
+
+    /**
+     * @param CategoryInterface $category
+     */
+    public function addCategory(/*CategoryInterface*/ $category);
 
 }
