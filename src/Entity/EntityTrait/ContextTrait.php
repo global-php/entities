@@ -19,7 +19,7 @@ trait ContextTrait
     public function getEntityContexts()
     {
         if (!$this->entityContextArray) {
-            $this->entityContextArray = new ContextArray([]);
+            $this->entityContextArray = new ContextArray();
         }
         return $this->entityContextArray;
     }
